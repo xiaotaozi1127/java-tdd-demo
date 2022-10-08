@@ -1,5 +1,11 @@
 language: java
-jdk: openjdk11
+jdk:
+  - openjdk11
+
+script:
+  - ./gradlew check
+
+
 deploy:
   provider: heroku
   api_key: $HEROKU_TOKEN
