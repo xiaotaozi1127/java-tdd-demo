@@ -1,5 +1,5 @@
 language: java
-jdk: openjdk10
+jdk: openjdk11
 deploy:
   provider: heroku
   api_key: $HEROKU_TOKEN
