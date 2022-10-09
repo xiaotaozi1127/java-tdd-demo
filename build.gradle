@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.7.4'
     id 'io.spring.dependency-management' version '1.0.14.RELEASE'
     id 'java'
+    id 'jacoco'
 }
 
 group = 'com.example'
@@ -37,4 +38,22 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+    finalizedBy(tasks.jacocoTestReport)
 }
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+                minimum = 1.0
+            }
+        }
+    }
+}
+
+tasks.named('check') {
+    dependsOn(tasks.jacocoTestCoverageVerification)
+}
+
