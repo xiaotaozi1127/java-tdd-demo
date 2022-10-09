@@ -1,0 +1,13 @@
+---
+version: "3"
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: bookstore-db
+    environment:
+      - POSTGRES_USER=sa
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=bookstore
+    ports:
+      - "5231:5432"
