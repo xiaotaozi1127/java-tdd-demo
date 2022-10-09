@@ -1,5 +1,6 @@
 package com.example.bookstore.model;
 
+
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
